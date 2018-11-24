@@ -12,7 +12,7 @@ node {
     }
 
     stage('Deploy to Production'){
-        docker.withServer('tcp://192.168.56.102:2376', 'development') {
+        docker.withServer('tcp://centus02:2376', 'production') {
             sh 'docker run -d marlonrod/sample-app'
         }
     }
